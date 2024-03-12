@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* transition: .4s all; */
+}
+
+body{
+    font-family: "Heebo", sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+.toggle{
+    padding: 8px 12px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+}
+
+.toggle:active{
+    transform: scale(.98, .98);
+}
+
+.toggle:focus{
+    outline: 0;
+}
+
+
+.clock-container{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.needle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    background-color: var(--primary-color);
+    transform-origin: bottom center !important;
+    /* transition: .4s transform; */
+}
+
+.hour, .minute, .second{
+    transform: translate(-50%, -100%);
+}
+
+.hour{
+    height: 90px;
+}
+
+.second{
+    background-color: red;
+}
+
+.minute{
+    background: var(--primary-color);
+}
+
+.center-point{
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: 99;
+    position: relative;
+}
+
+.center-point::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.time{
+    font-size: 3em;
+}
+
+.date{
+    color: rgba(128, 128, 128, 0.8);
+}
+
+.date .circle{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    padding: 2px;
+}
